@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.22310.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MtgCard", "MtgCard\MtgCard.csproj", "{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MtgCard.Services", "MtgCard.Services\MtgCard.Services.csproj", "{FD3F460B-B9F2-4868-AAB7-98D5C20DD65D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MtgCard.Domain", "MtgCard.Domain\MtgCard.Domain.csproj", "{FFEBB363-15E1-43E5-88B7-349F7E53FC6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD3F460B-B9F2-4868-AAB7-98D5C20DD65D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD3F460B-B9F2-4868-AAB7-98D5C20DD65D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD3F460B-B9F2-4868-AAB7-98D5C20DD65D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD3F460B-B9F2-4868-AAB7-98D5C20DD65D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFEBB363-15E1-43E5-88B7-349F7E53FC6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFEBB363-15E1-43E5-88B7-349F7E53FC6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFEBB363-15E1-43E5-88B7-349F7E53FC6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFEBB363-15E1-43E5-88B7-349F7E53FC6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

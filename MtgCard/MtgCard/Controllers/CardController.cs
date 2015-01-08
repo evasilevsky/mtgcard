@@ -1,7 +1,6 @@
 ﻿using System.Web.Http;
-using System.Web.Mvc;
-using MtgCard.Models;
 using MtgCard.Services;
+using MtgCard.Models;
 
 namespace MtgCard.Controllers
 {
