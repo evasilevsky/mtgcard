@@ -4,18 +4,18 @@ namespace MtgCard.Models
 {
 	public class Edition
 	{
-		public String set;
-		public String setId;
-		public String rarity;
-		public String artist;
-		public String multiverseId;
-		public String number;
-		public String layout;
+		public string set;
+		public string set_Id;
+		public string rarity;
+		public string artist;
+		public string multiverseId;
+		public string number;
+		public string layout;
 		public Price price;
-		public String url;
-		public String imageUrl;
-		public String setUrl;
-		public String storeUrl;
+		public string url;
+		public string imageUrl;
+		public string setUrl;
+		public string storeUrl;
 
 		//    "set": "Alliances",
 		//    "set_id": "ALL",

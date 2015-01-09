@@ -7,12 +7,6 @@ namespace MtgCard.Services
 	{
 		public T Deserialize<T>(string content)
 		{
-			var result = JsonConvert.DeserializeObject<dynamic>(content);
-			if (result != null && result["data"] != null)
-			{
-				content = JsonConvert.SerializeObject(result["data"]);
-			}
-
 			var deserializeObject = JsonConvert.DeserializeObject<T>(content);
 			return deserializeObject;
 		}

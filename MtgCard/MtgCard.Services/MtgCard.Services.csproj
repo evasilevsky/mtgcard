@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="CardAdapter.cs" />
     <Compile Include="JsonTranslator.cs" />
+    <Compile Include="PackFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
