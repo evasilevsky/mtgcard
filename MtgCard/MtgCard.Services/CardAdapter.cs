@@ -37,11 +37,12 @@ namespace MtgCard.Services
 			return cards;
 		}
 
-		public List<Card> GetCardsBySet(string setName)
+		public List<Card> GetCardsBySetAndRarity(string setName, Rarity rarity)
 		{
 			var cards = new List<KeyValuePair<string, string>>
 			{
-				new KeyValuePair<string, string>("set", setName)
+				new KeyValuePair<string, string>("set", setName), 
+				new KeyValuePair<string, string>("rarity", rarity.ToString().ToLower()) 
 			};
 			return GetFilteredCards(cards);
 		} 

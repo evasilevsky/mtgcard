@@ -1,8 +1,10 @@
-﻿@model dynamic
+﻿@model MtgCard.Domain.Pack
 
 @{
 	ViewBag.Title = "title";
-	Layout = "_Layout";
 }
 
-<h2>title</h2>
+@foreach (var card in Model.Cards)
+{
+	<img src="@card.editions.First(x => x.set_Id == "KTK").image_Url"/>
+}

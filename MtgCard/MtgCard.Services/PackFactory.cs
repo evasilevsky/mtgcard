@@ -29,12 +29,12 @@ namespace MtgCard.Services
 		public Pack BuildRandomPackFromSet(string setName, bool packShouldContainFoil = false, bool packShouldContainMythic = false)
 		{
 			var pack = new List<Card>();
-			var allCards = _cardAdapter.GetCardsBySet(setName);
+			var allCards = _cardAdapter.GetCardsBySetAndRarity(setName, Rarity.Common);
 
-			var allCommons = allCards.Where(x => x.editions.Any(y => y.set_Id == setName && y.rarity == Rarity.Common.ToString().ToLower()));
-			var allUncommons = allCards.Where(x => x.editions.Any(y => y.set_Id == setName && y.rarity == Rarity.Uncommon.ToString().ToLower()));
-			var allRares = allCards.Where(x => x.editions.Any(y => y.set_Id == setName && y.rarity == Rarity.Rare.ToString().ToLower()));
-			var allMythics = allCards.Where(x => x.editions.Any(y => y.set_Id == setName && y.rarity == Rarity.Mythic.ToString().ToLower()));
+			var allCommons = _cardAdapter.GetCardsBySetAndRarity(setName, Rarity.Common);
+			var allUncommons = _cardAdapter.GetCardsBySetAndRarity(setName, Rarity.Uncommon);
+			var allRares = _cardAdapter.GetCardsBySetAndRarity(setName, Rarity.Rare);
+			var allMythics = _cardAdapter.GetCardsBySetAndRarity(setName, Rarity.Mythic);
 			var numberOfCommons = 10;
 			var numberOfUncommons = 3;
 

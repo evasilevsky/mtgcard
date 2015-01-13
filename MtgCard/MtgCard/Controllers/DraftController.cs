@@ -10,7 +10,7 @@ namespace MtgCard.Controllers
         {
 	        var packFactory = new PackFactory();
 			var pack = packFactory.BuildRandomPackFromSet("KTK");
-            return View();
+            return View(pack);
         }
     }
 }

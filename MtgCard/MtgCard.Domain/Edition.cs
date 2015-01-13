@@ -13,7 +13,7 @@ namespace MtgCard.Models
 		public string layout;
 		public Price price;
 		public string url;
-		public string imageUrl;
+		public string image_Url;
 		public string setUrl;
 		public string storeUrl;
 
