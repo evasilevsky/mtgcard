@@ -2,9 +2,30 @@
 
 @{
 	ViewBag.Title = "title";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@foreach (var card in Model.Cards)
-{
-	<img src="@card.editions.First(x => x.set_Id == "KTK").image_Url"/>
+<div id="draftedCards"> </div>
+
+<div id="currentPack">
+	@foreach (var card in Model.Cards)
+	{
+		<img class="cardInPack @card.id" src="@card.editions.First(x => x.set_Id == "KTK").image_Url" style="width:265px; height: 370px;" />
+	}
+</div>
+
+@section scripts{
+	<script>
+		var moveCardToCollection = function(source, destination, ratio) {
+			var clone = source.clone();
+			clone.width(clone.width() * ratio);
+			clone.height(clone.height() * ratio);
+			destination.append(clone);
+			source.remove();
+		};
+
+		$(".cardInPack").click(function () {
+			moveCardToCollection($(this), $("#draftedCards"), .5);
+		});
+	</script>
 }
