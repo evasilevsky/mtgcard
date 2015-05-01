@@ -10,7 +10,9 @@
 <div id="currentPack">
 	@foreach (var card in Model.Cards)
 	{
-		<img class="cardInPack @card.id" src="@card.editions.First(x => x.set_Id == "KTK").image_Url" style="width:265px; height: 370px;" />
+		var imageSrc = string.Format("http://magiccards.info/scans/en/ktk/{0}.jpg", @card.editions.First(x => x.set_Id == "KTK").number);
+		
+		<img class="cardInPack @card.id" src="@imageSrc" style="width:265px; height: 370px;" />
 	}
 </div>
 
