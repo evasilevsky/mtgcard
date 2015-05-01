@@ -6,7 +6,7 @@ namespace MtgCard
 	{
 		public static void RegisterBundles(BundleCollection bundles)
 		{
-			bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
+			bundles.Add(new ScriptBundle("~/bundles/generalScripts").Include(
 						"~/Scripts/jquery-{version}.js",
 						"~/Scripts/jquery-ui-{version}.js",
 						"~/Scripts/jquery.validate.js",
@@ -14,6 +14,12 @@ namespace MtgCard
 						"~/Scripts/bootstrap.js",
 						"~/Scripts/common.js"));
 
+			bundles.Add(new ScriptBundle("~/bundles/additionalScripts").Include(
+				"~/Scripts/angular.js"));
+
+			bundles.Add(new ScriptBundle("~/bundles/customScripts").Include(
+				"~/js/app.js"
+				));
 
 
 			bundles.Add(new StyleBundle("~/bundles/styles").Include(

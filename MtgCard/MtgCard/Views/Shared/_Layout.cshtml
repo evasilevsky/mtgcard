@@ -13,7 +13,8 @@
         @RenderBody()
     </div>
 
-    @Scripts.Render("~/bundles/scripts")
+    @Scripts.Render("~/bundles/generalScripts")
+    @Scripts.Render("~/bundles/additionalScripts")
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -5,3 +5,7 @@
 /// <reference path="jquery-ui.min-1.11.1.js" />
 /// <reference path="jquery.validate.js" />
 /// <reference path="jquery.validate.unobtrusive.js" />
+/// <reference path="angular-mocks.js" />
+/// <reference path="angular.min.js" />
+/// <reference path="../js/draftcontroller.js" />
+/// <reference path="../js/app.js" />

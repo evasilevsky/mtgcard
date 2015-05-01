@@ -5,6 +5,10 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div ng-app="MagicApp" ng-controller="DraftController">
+	<div>{{test}}</div>
+</div>
+
 <div id="draftedCards"> </div>
 
 <div id="currentPack">
@@ -17,6 +21,7 @@
 </div>
 
 @section scripts{
+	@Scripts.Render("~/bundles/customScripts")
 	<script>
 		var moveCardToCollection = function(source, destination, ratio) {
 			var clone = source.clone();
