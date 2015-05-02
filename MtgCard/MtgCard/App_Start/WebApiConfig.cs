@@ -9,7 +9,8 @@ namespace MtgCard.App_Start
 		{
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
-				routeTemplate: "api/{controller}"
+				routeTemplate: "api/draft/getRandomPack",
+				defaults: new { controller = "DraftApi", action = "GetRandomPack", id = RouteParameter.Optional }
 			);
 
 			config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
