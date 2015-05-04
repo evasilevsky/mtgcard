@@ -10,17 +10,21 @@ namespace MtgCard.Controllers
 	public class DraftApiController : ApiController
 	{
 		private PackFactory _packFactory = new PackFactory();
-		private Draft _draft;
+		private Draft _currentDraft;
 
 		public DraftApiController()
 		{
-			_draft = GetDraft(3);
+			_currentDraft = DraftFactory.GetInstance();
 		}
 
-		public void TakeCardFromPack(Player player, Card card)
+		public void TakeCardFromPack(Guid playerId, Guid cardId)
 		{
-			//var player = _draft.GetPlayerById(playerId);
-			_draft.TakeCardFromPack(player, card);
+			_currentDraft.TakeCardFromPack(playerId, cardId);
+		}
+
+		public Draft GetDraft()
+		{
+			return _currentDraft;
 		}
 
 		public IEnumerable<Pack> GetPacksForPlayer(string setId)
@@ -38,20 +42,6 @@ namespace MtgCard.Controllers
 			yield return _packFactory.BuildRandomPackFromSet(setId3);
 		}
 
-		public Draft GetDraft(int numberOfPlayers)
-		{
-			var draft = new Draft();
-			var players = new List<Player>();
-			for (int i = 0; i < numberOfPlayers; i++)
-			{
-				var packsForPlayer = GetPacksForPlayer("KTK");
-				players.Add(new Player
-				{
-					StartingPacks = packsForPlayer
-				});
-			}
-			return draft;
-		}
 
 		public Pack GetRandomPack()
 		{

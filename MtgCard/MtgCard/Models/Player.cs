@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using MtgCard.Domain;
 
 namespace MtgCard.Models
@@ -25,10 +26,17 @@ namespace MtgCard.Models
 			set { _packQueue = value; }
 		}
 
-		public void TakeCardFromPack(Card card)
+		public void TakeCardFromPack(Guid cardId)
 		{
+			var card = GetCardByIdInCurrentPack(cardId);
+
 			CurrentPack.RemoveCard(card);
 			LimitedPool.AddCardToPool(card);
+		}
+
+		private Card GetCardByIdInCurrentPack(Guid cardId)
+		{
+			return CurrentPack.Cards.First(x => x.CardId == cardId);
 		}
 
 		public void GetNextPackFromQueue()

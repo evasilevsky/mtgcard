@@ -10,7 +10,7 @@
 		<img ng-repeat="card in draftedCards" class="cardInPack {{card.id}}" ng-src="{{'http://magiccards.info/scans/en/ktk/' + card.editions[0].number + '.jpg'}}" style="width:100px; height: 140px;" /> 
 	</div>
 	<div id="currentPack">
-		<img ng-repeat="card in currentPack track by $index" ng-click="addCard(card, $index)" class="cardInPack {{card.id}}" ng-src="{{'http://magiccards.info/scans/en/ktk/' + card.editions[0].number + '.jpg'}}" style="width:265px; height: 370px;" />
+		<img ng-repeat="card in currentPack track by $index" ng-click="takeCardFromPack(draft.Players[0], card, $index)" class="cardInPack {{card.id}}" ng-src="{{'http://magiccards.info/scans/en/ktk/' + card.editions[0].number + '.jpg'}}" style="width:265px; height: 370px;" />
 	</div>
 </div>
 

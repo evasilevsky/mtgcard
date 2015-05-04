@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MtgCard.Models
 {
@@ -15,5 +16,6 @@ namespace MtgCard.Models
 		public string text;
 		public Formats formats;
 		public List<Edition> editions;
+		public Guid CardId;
 	}
 }

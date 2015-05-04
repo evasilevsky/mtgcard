@@ -11,25 +11,35 @@ app.controller('DraftController', ['$scope', '$http', function ($scope, $http) {
 			});
 	};
 
-	var getDraft = function() {
-		$http.get('/api/draft/GetDraft?numberOfPlayers=3')
-			.success(function (data, status, headers, config) {
-				$scope.draft = data;
+	var takeCardFromPack = function(player, card, $index) {
+		$http.get("/api/draft/takeCardFromPack?playerId=" + player.Id + "&cardId=" + card.CardId)
+			.success(function(data, status, headers, config) {
+				$scope.currentPack = data.Cards;
+				$scope.draftedCards.push(card);
+				$scope.currentPack.splice($index, 1);
 			})
-			.error(function (data, status, headers, config) {
+			.error(function(data, status, headers, config) {
 
 			});
 	};
 
-	var addCard = function (card, $index) {
-		$scope.draftedCards.push(card);
-		$scope.currentPack.splice($index, 1);
-	};
-	$scope.addCard = addCard;
+	var getDraft = function(player, card, $index) {
+		$http.get("/api/draft/getdraft")
+			.success(function(data, status, headers, config) {
+				$scope.draft = data;
+				console.log(data);
+			})
+			.error(function(data, status, headers, config) {
 
+			});
+	};
+
+	$scope.getState = function() {
+
+	};
 	$scope.draftedCards = [];
 	$scope.currentPack = getNextPack();
 	$scope.getNextPack = getNextPack;
-
+	$scope.takeCardFromPack = takeCardFromPack;
 	getDraft();
 }]);

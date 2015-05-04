@@ -1,17 +1,22 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using MtgCard.Domain;
+using MtgCard.Services;
 
 namespace MtgCard.Models
 {
+
 	public class Draft
 	{
+		private Draft instance = null;
 		public CircularList<Player> Players { get; set; }
 		public Rotation CurrentRotation { get; set; }
 
-		public void TakeCardFromPack(Player player, Card card)
+		public void TakeCardFromPack(Guid playerId, Guid cardId)
 		{
-			player.TakeCardFromPack(card);
+			var player = GetPlayerById(playerId);
+			player.TakeCardFromPack(cardId);
 		}
 
 		private void PassPackToNextPlayer(Player player)
@@ -39,6 +44,45 @@ namespace MtgCard.Models
 		public Player GetPlayerById(Guid playerId)
 		{
 			return Players.First(x => x.Id == playerId);
+		}
+	}
+
+	public static class DraftFactory
+	{
+		private static Draft _draft;
+		public static Draft GetInstance()
+		{
+			if (_draft == null)
+			{
+				_draft = GetNewDraft(3);
+			}
+			return _draft;
+		}
+
+		private static Draft GetNewDraft(int numberOfPlayers)
+		{
+			var draft = new Draft();
+			var players = new List<Player>();
+			for (int i = 0; i < numberOfPlayers; i++)
+			{
+				var packsForPlayer = GetPacksForPlayer("KTK");
+
+				players.Add(new Player
+				{
+					StartingPacks = packsForPlayer
+				});
+			}
+			return draft;
+		}
+
+
+		private static IEnumerable<Pack> GetPacksForPlayer(string setId)
+		{
+			var packFactory = new PackFactory();
+			for (int i = 0; i < 3; i++)
+			{
+				yield return packFactory.BuildRandomPackFromSet(setId);
+			}
 		}
 	}
 }
