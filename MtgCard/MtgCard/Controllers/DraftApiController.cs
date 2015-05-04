@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
 using MtgCard.Domain;
 using MtgCard.Models;
@@ -9,6 +10,18 @@ namespace MtgCard.Controllers
 	public class DraftApiController : ApiController
 	{
 		private PackFactory _packFactory = new PackFactory();
+		private Draft _draft;
+
+		public DraftApiController()
+		{
+			_draft = GetDraft(3);
+		}
+
+		public void TakeCardFromPack(Player player, Card card)
+		{
+			//var player = _draft.GetPlayerById(playerId);
+			_draft.TakeCardFromPack(player, card);
+		}
 
 		public IEnumerable<Pack> GetPacksForPlayer(string setId)
 		{
@@ -44,46 +57,6 @@ namespace MtgCard.Controllers
 		{
 			var pack = _packFactory.BuildRandomPackFromSet("KTK");
 			return pack;
-		}
-	}
-
-	public class Draft
-	{
-		public IEnumerable<Player> Players { get; set; }
-		public Rotation CurrentRotation { get; set; }
-
-		public void TakeCardFromPack(Player player, Card card)
-		{
-			player.TakeCardFromPack(card);
-		}
-
-		private void PassPackToNextPlayer(Player player)
-		{
-			if (CurrentRotation == Rotation.Left)
-			{
-				//todo
-			}
-		}
-	}
-
-	public class Player
-	{
-		private IEnumerable<Pack> _packQueue = new List<Pack>();
-		public IEnumerable<Pack> StartingPacks { get; set; }
-
-		public Pack CurrentPack { get; set; }
-		public LimitedPool LimitedPool { get; set; }
-
-		public IEnumerable<Pack> PackQueue
-		{
-			get { return _packQueue; }
-			set { _packQueue = value; }
-		}
-
-		public void TakeCardFromPack(Card card)
-		{
-			CurrentPack.RemoveCard(card);
-			LimitedPool.AddCardToPool(card);
 		}
 	}
 }

@@ -11,6 +11,16 @@ app.controller('DraftController', ['$scope', '$http', function ($scope, $http) {
 			});
 	};
 
+	var getDraft = function() {
+		$http.get('/api/draft/GetDraft?numberOfPlayers=3')
+			.success(function (data, status, headers, config) {
+				$scope.draft = data;
+			})
+			.error(function (data, status, headers, config) {
+
+			});
+	};
+
 	var addCard = function (card, $index) {
 		$scope.draftedCards.push(card);
 		$scope.currentPack.splice($index, 1);
@@ -21,5 +31,5 @@ app.controller('DraftController', ['$scope', '$http', function ($scope, $http) {
 	$scope.currentPack = getNextPack();
 	$scope.getNextPack = getNextPack;
 
-	
+	getDraft();
 }]);

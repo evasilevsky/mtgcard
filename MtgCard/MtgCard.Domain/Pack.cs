@@ -1,10 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MtgCard.Models;
 
 namespace MtgCard.Domain
 {
 	public class Pack
 	{
+		private Guid _id = Guid.NewGuid();
+
+		public Guid Id
+		{
+			get { return _id; }
+			set { _id = value; }
+		}
+
 		public List<Card> Cards { get; set; }
 		public string SetName { get; set; }
 
