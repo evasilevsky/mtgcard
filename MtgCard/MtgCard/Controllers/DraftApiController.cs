@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Web.Http;
 using MtgCard.Domain;
-using MtgCard.Models;
 using MtgCard.Services;
 
 namespace MtgCard.Controllers
@@ -14,7 +13,7 @@ namespace MtgCard.Controllers
 
 		public DraftApiController()
 		{
-			_currentDraft = DraftFactory.GetInstance();
+			//_currentDraft = DraftFactory.GetInstance();
 		}
 
 		public void TakeCardFromPack(Guid playerId, Guid cardId)

@@ -45,7 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationStateRepository.cs" />
     <Compile Include="CardAdapter.cs" />
+    <Compile Include="Interfaces\IApplicationStateRepository.cs" />
     <Compile Include="JsonTranslator.cs" />
     <Compile Include="PackFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
