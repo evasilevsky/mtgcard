@@ -20,6 +20,15 @@ namespace MtgCard.App_Start
 				defaults: new { controller = "DraftApi", action = "GetDraft", id = RouteParameter.Optional }
 			);
 
+
+
+
+			config.Routes.MapHttpRoute(
+				name: "GetSealed",
+				routeTemplate: "api/sealed/getpool",
+				defaults: new { controller = "SealedApi", action = "GetPool", id = RouteParameter.Optional }
+			);
+
 			config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 		}
 	}

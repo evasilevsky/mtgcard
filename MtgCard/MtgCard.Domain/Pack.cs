@@ -27,14 +27,19 @@ namespace MtgCard.Domain
 	{
 		public LimitedPool()
 		{
-			AllCards = new List<Card>();
+			Cards = new List<Card>();
 		}
 
-		public List<Card> AllCards { get; set; }
+		public void AddPackToPool(Pack pack)
+		{
+			Cards.AddRange(pack.Cards);
+		}
+
+		public List<Card> Cards { get; set; }
 
 		public void AddCardToPool(Card card)
 		{
-			AllCards.Add(card);
+			Cards.Add(card);
 		}
 	}
 

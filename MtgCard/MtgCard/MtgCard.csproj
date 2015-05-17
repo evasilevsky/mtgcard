@@ -157,6 +157,8 @@
     <Compile Include="Controllers\DraftController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SealedApiController.cs" />
+    <Compile Include="Controllers\SealedController.cs" />
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
@@ -247,6 +249,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="js\app.js" />
     <Content Include="js\DraftController.js" />
+    <Content Include="js\SealedController.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -279,6 +282,7 @@
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Views\Error\Http404.cshtml" />
     <Content Include="Views\Draft\Index.cshtml" />
+    <Content Include="Views\Sealed\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
