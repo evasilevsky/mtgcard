@@ -157,6 +157,7 @@
     <Compile Include="Controllers\DraftController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SimulationController.cs" />
     <Compile Include="Controllers\SealedApiController.cs" />
     <Compile Include="Controllers\SealedController.cs" />
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
@@ -169,9 +170,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\DependencyResolvers\NinjectDependencyResolver.cs" />
-    <Compile Include="Models\CircularList.cs" />
-    <Compile Include="Models\Draft.cs" />
-    <Compile Include="Models\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -286,6 +284,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
     <Folder Include="Views\Card\" />
   </ItemGroup>
   <ItemGroup>

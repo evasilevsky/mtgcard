@@ -29,6 +29,13 @@ namespace MtgCard.App_Start
 				defaults: new { controller = "SealedApi", action = "GetPool", id = RouteParameter.Optional }
 			);
 
+
+			config.Routes.MapHttpRoute(
+				name: "Simulate",
+				routeTemplate: "api/simulation/draft",
+				defaults: new { controller = "Simulation", action = "Draft", id = RouteParameter.Optional }
+			);
+
 			config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 		}
 	}

@@ -21,6 +21,18 @@ namespace MtgCard.Domain
 		{
 			Cards.Remove(card);
 		}
+
+		public Card GetRandomCard()
+		{
+			var random = new Random();
+			var index = random.Next(0, Cards.Count);
+			return Cards[index];
+		}
+
+		public bool IsEmpty()
+		{
+			return Cards == null || Cards.Count == 0;
+		}
 	}
 
 	public class LimitedPool
