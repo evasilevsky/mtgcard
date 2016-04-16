@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FD3F460B-B9F2-4868-AAB7-98D5C20DD65D}</ProjectGuid>
+    <ProjectGuid>{906D8403-F09E-4AD2-8A2E-2A757571CD14}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MtgCard.Services</RootNamespace>
-    <AssemblyName>MtgCard.Services</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>MtgCard.Services.Tests</RootNamespace>
+    <AssemblyName>MtgCard.Services.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,12 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.2.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.2.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="RestSharp">
-      <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,14 +40,11 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationStateRepository.cs" />
-    <Compile Include="CardAdapter.cs" />
-    <Compile Include="Interfaces\IApplicationStateRepository.cs" />
-    <Compile Include="JsonTranslator.cs" />
-    <Compile Include="PackFactory.cs" />
+    <Compile Include="CardAdapterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,9 +52,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MtgCard.Domain\MtgCard.Domain.csproj">
-      <Project>{ffebb363-15e1-43e5-88b7-349f7e53fc6a}</Project>
+      <Project>{FFEBB363-15E1-43E5-88B7-349F7E53FC6A}</Project>
       <Name>MtgCard.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MtgCard.Services\MtgCard.Services.csproj">
+      <Project>{fd3f460b-b9f2-4868-aab7-98d5c20dd65d}</Project>
+      <Name>MtgCard.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -44,7 +44,7 @@ namespace MtgCard.Controllers
 
 		public Pack GetRandomPack()
 		{
-			var pack = _packFactory.BuildRandomPackFromSet("KTK");
+			var pack = _packFactory.BuildRandomPackFromSet("SOI");
 			return pack;
 		}
 	}

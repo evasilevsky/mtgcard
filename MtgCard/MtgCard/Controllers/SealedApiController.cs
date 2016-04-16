@@ -14,7 +14,7 @@ namespace MtgCard.Controllers
 			var pool = new LimitedPool();
 			for (int i = 0; i < 6; i++)
 			{
-				var pack = packFactory.BuildRandomPackFromSet("KTK");
+				var pack = packFactory.BuildRandomPackFromSet("SOI");
 				pool.AddPackToPool(pack);
 			}
 			return pool;

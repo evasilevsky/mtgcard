@@ -9,7 +9,7 @@ namespace MtgCard.Controllers
 		public ActionResult Index()
 		{
 			var packFactory = new PackFactory();
-			var pack = packFactory.BuildRandomPackFromSet("KTK");
+			var pack = packFactory.BuildRandomPackFromSet("SOI");
 			return View(pack);
 		}
 	}

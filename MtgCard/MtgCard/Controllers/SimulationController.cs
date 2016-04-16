@@ -20,7 +20,7 @@ namespace MtgCard.Controllers
 				var player = new Player();
 				for (int j = 0; j < numberOfPacks; j++)
 				{
-					player.EnqueuePack(packFactory.BuildRandomPackFromSet("KTK"));
+					player.EnqueuePack(packFactory.BuildRandomPackFromSet("SOI"));
 				}
 				draft.Players.Add(player);
 			}
