@@ -11,7 +11,7 @@ namespace MtgCard.Domain
 		private bool _isDoneDrafting;
 		private Queue<Pack> _startingPackQueue = new Queue<Pack>();
 		private Pack _currentPack;
-		private LimitedPool _limitedPool = new LimitedPool();
+		private Pool _limitedPool = new Pool();
 
 		public Queue<Pack> StartingPackQueue
 		{
@@ -28,7 +28,7 @@ namespace MtgCard.Domain
 			set { _currentPack = value; }
 		}
 
-		public LimitedPool LimitedPool
+		public Pool LimitedPool
 		{
 			get { return _limitedPool; }
 			set { _limitedPool = value; }

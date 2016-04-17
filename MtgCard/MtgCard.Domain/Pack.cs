@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MtgCard.Domain
 {
-	public class Pack
+	public class Pack : Product
 	{
 		private Guid _id = Guid.NewGuid();
 
@@ -34,9 +34,9 @@ namespace MtgCard.Domain
 		}
 	}
 
-	public class LimitedPool
+	public class Pool
 	{
-		public LimitedPool()
+		public Pool()
 		{
 			Cards = new List<Card>();
 		}

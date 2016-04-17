@@ -1,6 +1,6 @@
 ﻿namespace MtgCard.Domain.Formats
 {
-	public class Commander : Format
+	public class Commander : ConstructedFormat
 	{
 		public Commander()
 		{

@@ -7,11 +7,11 @@ namespace MtgCard.Controllers
 {
     public class SealedApiController : ApiController
     {
-		public LimitedPool GetPool()
+		public Pool GetPool()
 		{
 			var packs = new List<Pack>();
 			var packFactory = new PackFactory();
-			var pool = new LimitedPool();
+			var pool = new Pool();
 			for (int i = 0; i < 6; i++)
 			{
 				var pack = packFactory.BuildRandomPackFromSet("SOI");
