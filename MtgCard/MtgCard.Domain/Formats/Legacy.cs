@@ -4,10 +4,6 @@ namespace MtgCard.Domain.Formats
 {
 	public class Legacy : ConstructedFormat
 	{
-		public bool IsCardBanned(Card card)
-		{
-			return BannedList.Contains(card.name);
-		}
 		public override List<string> BannedList
 		{
 			get
