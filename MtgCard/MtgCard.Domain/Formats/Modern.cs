@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MtgCard.Domain.Formats
 {
 	public class Modern : Format, IBannable
 	{
+		public bool IsCardBanned(Card card)
+		{
+			return BannedList.Contains(card.name);
+		}
+
 		public List<string> BannedList
 		{
 			get

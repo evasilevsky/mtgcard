@@ -5,6 +5,15 @@ namespace MtgCard.Domain.Formats
 {
 	public class Vintage : IBannable, IRestrictable
 	{
+
+		public bool IsCardRestricted(Card card)
+		{
+			return RestrictedList.Contains(card.name);
+		}
+		public bool IsCardBanned(Card card)
+		{
+			return BannedList.Contains(card.name);
+		}
 		public List<string> BannedList
 		{
 			get

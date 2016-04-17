@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MtgCard.Domain.Formats;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,6 +20,19 @@ namespace MtgCard.Domain
 				}
 				return formats;
 			}
+		}
+
+		public bool IsCardBannedInFormat(Card card, IBannable format)
+		{
+			var isBanned = false;
+			foreach (var bannedCard in format.BannedList)
+			{
+				if (card.name == bannedCard)
+				{
+					isBanned = true;
+				}
+			}
+			return isBanned;
 		}
 
 		public bool IsCardLegalInFormat(Format format)
