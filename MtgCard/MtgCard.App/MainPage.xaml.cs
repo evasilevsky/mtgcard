@@ -23,6 +23,8 @@ namespace MtgCard.App
     /// </summary>
     public sealed partial class MainPage : Page
     {
+		private int row = 0;
+		private int col = 0;
         public MainPage()
 		{
 			this.InitializeComponent();
@@ -31,8 +33,12 @@ namespace MtgCard.App
 		public void AddImage(string imageUrl)
 		{
 			var img = new Image();
+			img.Width = 100;
+			img.Height = 100;
 			img.Source = new BitmapImage(new Uri(imageUrl, UriKind.Absolute));
-			grid.Children.Add(img);
+			Grid.SetRow(img, row++);
+			Grid.SetRow(img, col++);
+			field.Children.Add(img);
 		}
 
 		private void button_Click(object sender, RoutedEventArgs e)
