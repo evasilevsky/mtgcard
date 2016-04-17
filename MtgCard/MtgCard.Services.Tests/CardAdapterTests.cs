@@ -20,18 +20,6 @@ namespace MtgCard.Services.Tests
 		[TestFixture]
 		public class GetTypeAhead : CardAdapterTests
 		{
-			[TestCase("f")]
-			[TestCase("fo")]
-			[TestCase("for")]
-			[TestCase("forc")]
-			[TestCase("force")]
-			public void CardDoesNotShowUpInFirstTenResults(string searchTerm)
-			{
-				var classUnderTest = new CardAdapter();
-				var result = classUnderTest.GetTypeAhead(searchTerm);
-				Assert.That(!result.Any(x => x.name == "Force of Will"));
-			}
-
 			[TestCase("force ")]
 			[TestCase("force o")]
 			[TestCase("force of")]

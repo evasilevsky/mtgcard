@@ -17,5 +17,12 @@ namespace MtgCard.Models
 		public Formats formats;
 		public List<Edition> editions;
 		public Guid CardId;
+		public string DefaultImage
+		{
+			get
+			{
+				return editions?[0].image_Url;
+			}
+		}
 	}
 }
