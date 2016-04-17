@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MtgCard.Domain", "MtgCard.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MtgCard.Services.Tests", "MtgCard.Services.Tests\MtgCard.Services.Tests.csproj", "{906D8403-F09E-4AD2-8A2E-2A757571CD14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MtgCard.App", "MtgCard.App\MtgCard.App.csproj", "{7CDA3D37-7DD9-4304-93D1-52A68DB44198}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,28 @@ Global
 		{906D8403-F09E-4AD2-8A2E-2A757571CD14}.Release|x64.Build.0 = Release|Any CPU
 		{906D8403-F09E-4AD2-8A2E-2A757571CD14}.Release|x86.ActiveCfg = Release|Any CPU
 		{906D8403-F09E-4AD2-8A2E-2A757571CD14}.Release|x86.Build.0 = Release|Any CPU
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|Any CPU.Build.0 = Debug|x86
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|Any CPU.Deploy.0 = Debug|x86
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|ARM.ActiveCfg = Debug|ARM
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|ARM.Build.0 = Debug|ARM
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|ARM.Deploy.0 = Debug|ARM
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|x64.ActiveCfg = Debug|x64
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|x64.Build.0 = Debug|x64
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|x64.Deploy.0 = Debug|x64
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|x86.ActiveCfg = Debug|x86
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|x86.Build.0 = Debug|x86
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Debug|x86.Deploy.0 = Debug|x86
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Release|Any CPU.ActiveCfg = Release|x86
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Release|ARM.ActiveCfg = Release|ARM
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Release|ARM.Build.0 = Release|ARM
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Release|ARM.Deploy.0 = Release|ARM
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Release|x64.ActiveCfg = Release|x64
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Release|x64.Build.0 = Release|x64
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Release|x64.Deploy.0 = Release|x64
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Release|x86.ActiveCfg = Release|x86
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Release|x86.Build.0 = Release|x86
+		{7CDA3D37-7DD9-4304-93D1-52A68DB44198}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
