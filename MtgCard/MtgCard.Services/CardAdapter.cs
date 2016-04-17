@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MtgCard.Models;
 using RestSharp;
 
@@ -35,6 +36,15 @@ namespace MtgCard.Services
 			var restResponse = restClient.Execute(restRequest);
 			var cards = jsonTranslator.Deserialize<List<Card>>(restResponse.Content);
 			return cards;
+		}
+
+		public List<Card> GetTypeAhead(string searchTerm)
+		{
+			RestRequest restRequest = new RestRequest("/typeahead");
+			restRequest.AddQueryParameter("q", searchTerm);
+			var restResponse = restClient.Execute(restRequest);
+			var card = jsonTranslator.Deserialize<List<Card>>(restResponse.Content);
+			return card;
 		}
 
 		public List<Card> GetCardsBySetAndRarity(string setName, Rarity rarity)
