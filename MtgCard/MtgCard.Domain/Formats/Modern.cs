@@ -4,12 +4,7 @@ namespace MtgCard.Domain.Formats
 {
 	public class Modern : ConstructedFormat, IBannable
 	{
-		public bool IsCardBanned(Card card)
-		{
-			return BannedList.Contains(card.name);
-		}
-
-		public List<string> BannedList
+		public override List<string> BannedList
 		{
 			get
 			{

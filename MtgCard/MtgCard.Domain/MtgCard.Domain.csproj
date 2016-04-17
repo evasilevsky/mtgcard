@@ -48,6 +48,7 @@
     <Compile Include="Formats\ConstructedFormat.cs" />
     <Compile Include="Formats\Format.cs" />
     <Compile Include="Formats\IBannable.cs" />
+    <Compile Include="Formats\ICommanderBannable.cs" />
     <Compile Include="Formats\IRestrictable.cs" />
     <Compile Include="Formats\Legacy.cs" />
     <Compile Include="Formats\LimitedFormat.cs" />

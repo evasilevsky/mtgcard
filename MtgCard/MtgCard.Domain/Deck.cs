@@ -10,29 +10,26 @@ namespace MtgCard.Domain
 		public List<Card> cards{ get; set; }
 		public List<Format> LegalFormats { get
 			{
-				var formats = new List<Format>();
-				foreach (var format in Enum.GetValues(typeof(Format)).Cast<Format>())
+				var legalFormats = new List<Format>();
+
+				var type = typeof(Format);
+				var allFormatsTypes = AppDomain.CurrentDomain.GetAssemblies()
+					.SelectMany(s => s.GetTypes())
+					.Where(p => type.IsAssignableFrom(p) && !p.IsAbstract);
+
+				foreach (var formatType in allFormatsTypes)
 				{
-					if (IsCardLegalInFormat(format))
+					var format = Activator.CreateInstance(formatType) as Format;
+					foreach (var card in cards)
 					{
-						formats.Add(format);
+						//if (format.IsCardLegalInFormat()
+						//{
+						//	legalFormats.Add(formatType);
+						//}
 					}
 				}
-				return formats;
+				return legalFormats;
 			}
-		}
-
-		public bool IsCardBannedInFormat(Card card, IBannable format)
-		{
-			var isBanned = false;
-			foreach (var bannedCard in format.BannedList)
-			{
-				if (card.name == bannedCard)
-				{
-					isBanned = true;
-				}
-			}
-			return isBanned;
 		}
 
 		public bool IsCardLegalInFormat(Format format)

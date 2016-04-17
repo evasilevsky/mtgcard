@@ -2,13 +2,13 @@
 
 namespace MtgCard.Domain.Formats
 {
-	public class Legacy : ConstructedFormat, IBannable
+	public class Legacy : ConstructedFormat
 	{
 		public bool IsCardBanned(Card card)
 		{
 			return BannedList.Contains(card.name);
 		}
-		public List<string> BannedList
+		public override List<string> BannedList
 		{
 			get
 			{

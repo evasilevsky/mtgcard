@@ -7,5 +7,7 @@ namespace MtgCard.Domain
 	{
 		public string Name { get; set; }
 		public int MinimumDeckSize { get; set; }
+		public int InitialHandSize { get; set; }
+		public int InitialLifeTotal { get; set; }
 	}	
 }
