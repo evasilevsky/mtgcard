@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MtgCard.Domain.Formats
 {
-	public class Vintage : IBannable, IRestrictable
+	public class Vintage : ConstructedFormat, IBannable, IRestrictable
 	{
 
 		public bool IsCardRestricted(Card card)

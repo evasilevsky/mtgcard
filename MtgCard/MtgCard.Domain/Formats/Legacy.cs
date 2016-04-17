@@ -2,7 +2,7 @@
 
 namespace MtgCard.Domain.Formats
 {
-	public class Legacy : Format, IBannable
+	public class Legacy : ConstructedFormat, IBannable
 	{
 		public bool IsCardBanned(Card card)
 		{

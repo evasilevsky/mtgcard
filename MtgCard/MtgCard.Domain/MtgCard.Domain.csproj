@@ -44,10 +44,13 @@
     <Compile Include="Deck.cs" />
     <Compile Include="Draft.cs" />
     <Compile Include="Edition.cs" />
-    <Compile Include="Formats\Formats.cs" />
+    <Compile Include="Formats\Commander.cs" />
+    <Compile Include="Formats\ConstructedFormat.cs" />
+    <Compile Include="Formats\Format.cs" />
     <Compile Include="Formats\IBannable.cs" />
     <Compile Include="Formats\IRestrictable.cs" />
     <Compile Include="Formats\Legacy.cs" />
+    <Compile Include="Formats\LimitedFormat.cs" />
     <Compile Include="Formats\Modern.cs" />
     <Compile Include="Formats\Vintage.cs" />
     <Compile Include="Pack.cs" />
