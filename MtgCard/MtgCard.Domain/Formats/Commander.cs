@@ -9,6 +9,7 @@ namespace MtgCard.Domain.Formats
 		{
 			MaxNumberOfCopies = 1;
 			MinimumDeckSize = 100;
+			InitialLifeTotal = 40;
 		}
 
 		public List<string> BannedAsCommanderList

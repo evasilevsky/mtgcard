@@ -7,7 +7,7 @@ namespace MtgCard.Domain.Formats
 	{
 		public ConstructedFormat()
 		{
-			InitialLifeTotal = 40;
+			InitialLifeTotal = 20;
 		}
 
 		public int MaxNumberOfCopies { get; set; }

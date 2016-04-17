@@ -44,6 +44,8 @@
     <Compile Include="Deck.cs" />
     <Compile Include="Draft.cs" />
     <Compile Include="Edition.cs" />
+    <Compile Include="Exceptions\RestrictedCardException.cs" />
+    <Compile Include="Exceptions\TooManyCopiesException.cs" />
     <Compile Include="Formats\Commander.cs" />
     <Compile Include="Formats\ConstructedFormat.cs" />
     <Compile Include="Formats\Format.cs" />
