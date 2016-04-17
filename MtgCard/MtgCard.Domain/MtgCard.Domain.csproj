@@ -41,9 +41,15 @@
   <ItemGroup>
     <Compile Include="Card.cs" />
     <Compile Include="CircularList.cs" />
+    <Compile Include="Deck.cs" />
     <Compile Include="Draft.cs" />
     <Compile Include="Edition.cs" />
-    <Compile Include="Formats.cs" />
+    <Compile Include="Formats\Formats.cs" />
+    <Compile Include="Formats\IBannable.cs" />
+    <Compile Include="Formats\IRestrictable.cs" />
+    <Compile Include="Formats\Legacy.cs" />
+    <Compile Include="Formats\Modern.cs" />
+    <Compile Include="Formats\Vintage.cs" />
     <Compile Include="Pack.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Price.cs" />

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MtgCard.Models
+namespace MtgCard.Domain
 {
 	public class Edition
 	{

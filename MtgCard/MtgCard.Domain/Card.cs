@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MtgCard.Models
+namespace MtgCard.Domain
 {
 	public class Card
 	{
@@ -14,7 +14,7 @@ namespace MtgCard.Models
 		public int convertedManaCost;
 		public string cost;
 		public string text;
-		public Formats formats;
+		public Format formats;
 		public List<Edition> editions;
 		public Guid CardId;
 		public string DefaultImage

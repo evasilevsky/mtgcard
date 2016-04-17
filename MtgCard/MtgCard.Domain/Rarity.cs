@@ -1,4 +1,4 @@
-﻿namespace MtgCard.Services
+﻿namespace MtgCard.Domain
 {
 	public enum Rarity
 	{

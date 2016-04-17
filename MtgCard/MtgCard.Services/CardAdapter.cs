@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using MtgCard.Models;
 using RestSharp;
+using MtgCard.Domain;
 
 namespace MtgCard.Services
 {

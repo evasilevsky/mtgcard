@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using MtgCard.Domain;
-using MtgCard.Models;
 
 namespace MtgCard.Services
 {

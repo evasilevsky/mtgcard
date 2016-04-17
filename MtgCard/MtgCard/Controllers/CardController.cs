@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Web.Http;
 using MtgCard.Services;
-using MtgCard.Models;
+using MtgCard.Domain;
 
 namespace MtgCard.Controllers
 {

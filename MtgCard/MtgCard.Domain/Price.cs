@@ -1,4 +1,4 @@
-﻿namespace MtgCard.Models
+﻿namespace MtgCard.Domain
 {
 	public class Price
 	{
