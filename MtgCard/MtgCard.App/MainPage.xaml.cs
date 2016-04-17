@@ -27,5 +27,17 @@ namespace MtgCard.App
 		{
 			this.InitializeComponent();
         }
-    }
+
+		public void AddImage(string imageUrl)
+		{
+			var img = new Image();
+			img.Source = new BitmapImage(new Uri(imageUrl, UriKind.Absolute));
+			grid.Children.Add(img);
+		}
+
+		private void button_Click(object sender, RoutedEventArgs e)
+		{
+			AddImage("https://image.deckbrew.com/mtg/multiverseid/382943.jpg");
+		}
+	}
 }
