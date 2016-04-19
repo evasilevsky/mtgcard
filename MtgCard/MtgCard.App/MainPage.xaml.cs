@@ -23,11 +23,13 @@ namespace MtgCard.App
     /// </summary>
     public sealed partial class MainPage : Page
     {
+		//private CardAdapter cardAdapter;
 		private int row = 0;
 		private int col = 0;
         public MainPage()
 		{
 			this.InitializeComponent();
+			//cardAdapter = new CardAdapter();
         }
 
 		public void AddImage(string imageUrl)
@@ -36,13 +38,23 @@ namespace MtgCard.App
 			img.Width = 100;
 			img.Height = 100;
 			img.Source = new BitmapImage(new Uri(imageUrl, UriKind.Absolute));
-			Grid.SetRow(img, row++);
-			Grid.SetRow(img, col++);
+			Grid.SetRow(img, row);
+			Grid.SetColumn(img, col);
+			if (row < field.RowDefinitions.Count)
+			{
+				row++;
+			}
+			else if (col < field.ColumnDefinitions.Count)
+			{
+				col++;
+				row = 0;
+			}
 			field.Children.Add(img);
 		}
 
 		private void button_Click(object sender, RoutedEventArgs e)
 		{
+			var card = cardName.Text;
 			AddImage("https://image.deckbrew.com/mtg/multiverseid/382943.jpg");
 		}
 	}
