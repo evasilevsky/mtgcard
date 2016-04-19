@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace MtgCard.Domain
 {
-	public class Card
+	public class Card : INotifyPropertyChanged
 	{
 		public string name;
 		public string id;
@@ -17,6 +18,11 @@ namespace MtgCard.Domain
 		public Format formats;
 		public List<Edition> editions;
 		public Guid CardId;
+
+		public int copies;
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
 		public string DefaultImage
 		{
 			get

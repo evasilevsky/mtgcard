@@ -1,4 +1,5 @@
-﻿using MtgCard.Services;
+﻿using MtgCard.Domain;
+using MtgCard.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,6 +35,9 @@ namespace MtgCard.App
 		{
 			this.InitializeComponent();
 			cardAdapter = new CardAdapter();
+			var model = new Card();
+			model.copies = 2;
+			this.DataContext = model;
         }
 
 		public void AddImageToGrid(string imageUrl)
