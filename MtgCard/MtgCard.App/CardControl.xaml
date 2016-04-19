@@ -9,14 +9,16 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid  Width="100" Height="100" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Image x:Name="image">
+            
+        </Image>
         <StackPanel Orientation="Horizontal" 
             VerticalAlignment="Bottom"
             HorizontalAlignment="Right">
             <Button x:Name="addCopy" Click="addCopy_Click">+</Button>
             <Button x:Name="removeCopy" Click="removeCopy_Click">-</Button>
-            <TextBlock Text="{Binding Path=Copies}"
-            ></TextBlock>
+            <TextBlock x:Name="copies">2</TextBlock>
         </StackPanel>
     </Grid>
 </UserControl>
