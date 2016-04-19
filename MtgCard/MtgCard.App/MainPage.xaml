@@ -11,6 +11,16 @@
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Click="button_Click">
 
         </Button>
+        <StackPanel Margin="80,10,0,0">
+            <StackPanel x:Name="sp1" Orientation="Horizontal">
+            </StackPanel>
+            <StackPanel x:Name="sp2" Orientation="Horizontal">
+
+            </StackPanel>
+            <StackPanel x:Name="sp3" Orientation="Horizontal">
+
+            </StackPanel>
+        </StackPanel>
         <Grid x:Name="field">
             <Grid.RowDefinitions>
                 <RowDefinition Height="42" />

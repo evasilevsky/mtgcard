@@ -35,7 +35,7 @@ namespace MtgCard.App
 			cardAdapter = new CardAdapter();
         }
 
-		public void AddImage(string imageUrl)
+		public void AddImageToGrid(string imageUrl)
 		{
 			var img = new Image();
 			img.Width = 100;
@@ -54,12 +54,42 @@ namespace MtgCard.App
 			}
 			field.Children.Add(img);
 		}
+		public void AddImageToStackPanel(string imageUrl)
+		{
+			var img = new Image();
+			img.Width = 100;
+			img.Height = 100;
+			img.Source = new BitmapImage(new Uri(imageUrl, UriKind.Absolute));
+			
+			switch (row)
+			{
+				case 0:
+					sp1.Children.Add(img);
+					break;
+				case 1:
+					sp2.Children.Add(img);
+					break;
+				case 2:
+					sp3.Children.Add(img);
+					break;
+			}
+
+			if (col < 5)
+			{
+				col++;
+			}
+			else
+			{
+				col = 0;
+				row++;
+			}
+		}
 
 		private async void button_Click(object sender, RoutedEventArgs e)
 		{
 			var card = await cardAdapter.GetCardByName(cardName.Text);
 
-			AddImage(card.DefaultImage);
+			AddImageToStackPanel(card.DefaultImage);
 		}
 	}
 }
