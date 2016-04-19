@@ -39,26 +39,7 @@ namespace MtgCard.App
 			model.copies = 2;
 			this.DataContext = model;
         }
-
-		public void AddImageToGrid(string imageUrl)
-		{
-			var img = new Image();
-			img.Width = 100;
-			img.Height = 100;
-			img.Source = new BitmapImage(new Uri(imageUrl, UriKind.Absolute));
-			Grid.SetRow(img, row);
-			Grid.SetColumn(img, col);
-			if (row < field.RowDefinitions.Count)
-			{
-				row++;
-			}
-			else if (col < field.ColumnDefinitions.Count)
-			{
-				col++;
-				row = 0;
-			}
-			field.Children.Add(img);
-		}
+		
 		public void AddCardToStackPanel(Card card)
 		{
 			var cardControl = new CardControl(card);

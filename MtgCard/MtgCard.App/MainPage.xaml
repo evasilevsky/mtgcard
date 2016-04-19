@@ -7,34 +7,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <AutoSuggestBox x:Name="cardName" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" TextChanged="cardName_TextChanged" Width="200" 
-                        QuerySubmitted="cardName_QuerySubmitted"
-                        SuggestionChosen="cardName_SuggestionChosen"></AutoSuggestBox>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Click="button_Click">
-
-        </Button>
-        <StackPanel Margin="80,10,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Background="Beige" Orientation="Horizontal" Grid.Row="0" Height="100" VerticalAlignment="Top">
+            <AutoSuggestBox x:Name="cardName" QueryIcon="Find" PlaceholderText="Pick a card" Margin="10,25,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" TextChanged="cardName_TextChanged" Width="200" 
+        		QuerySubmitted="cardName_QuerySubmitted"
+        		SuggestionChosen="cardName_SuggestionChosen"/>
+        </StackPanel>
+        <StackPanel Background="Bisque" Grid.Row="1" VerticalAlignment="Top">
             <StackPanel x:Name="sp1" Orientation="Horizontal">
             </StackPanel>
             <StackPanel x:Name="sp2" Orientation="Horizontal">
-
             </StackPanel>
             <StackPanel x:Name="sp3" Orientation="Horizontal">
-
             </StackPanel>
         </StackPanel>
-        <Grid x:Name="field">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="42" />
-                <RowDefinition Height="30*" />
-                <RowDefinition Height="30*" />
-                <RowDefinition Height="32*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="31*" />
-                <ColumnDefinition Width="26*" />
-                <ColumnDefinition Width="32*" />
-            </Grid.ColumnDefinitions>
-        </Grid>
     </Grid>
 </Page>
