@@ -21,17 +21,20 @@ namespace MtgCard.App
 {
 	public sealed partial class CardControl : UserControl
 	{
-		private Card card;
+		public Card card;
 		public Action Delete;
 
 		public CardControl()
 		{
 			this.InitializeComponent();
-			card = new Card();
-			card.copies = 2;
-			card.editions = new List<Edition> { new Edition { image_Url= "https://image.deckbrew.com/mtg/multiverseid/382943.jpg" } };
-			image.Source = new BitmapImage(new Uri(card.DefaultImage, UriKind.Absolute));
 			this.DataContext = this;
+		}
+
+		public CardControl(Card card)
+		{
+			this.InitializeComponent();
+			this.card = card;
+			image.Source = new BitmapImage(new Uri(card.DefaultImage, UriKind.Absolute));
 		}
 
 		private void addCopy_Click(object sender, RoutedEventArgs e)

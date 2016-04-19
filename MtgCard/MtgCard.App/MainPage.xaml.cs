@@ -59,23 +59,21 @@ namespace MtgCard.App
 			}
 			field.Children.Add(img);
 		}
-		public void AddImageToStackPanel(string imageUrl)
+		public void AddCardToStackPanel(Card card)
 		{
-			var img = new Image();
-			img.Width = 100;
-			img.Height = 100;
-			img.Source = new BitmapImage(new Uri(imageUrl, UriKind.Absolute));
-			
+			var cardControl = new CardControl(card);
+			cardControl.card = card;
+
 			switch (row)
 			{
 				case 0:
-					sp1.Children.Add(img);
+					sp1.Children.Add(cardControl);
 					break;
 				case 1:
-					sp2.Children.Add(img);
+					sp2.Children.Add(cardControl);
 					break;
 				case 2:
-					sp3.Children.Add(img);
+					sp3.Children.Add(cardControl);
 					break;
 			}
 
@@ -94,7 +92,7 @@ namespace MtgCard.App
 		{
 			var card = await cardAdapter.GetCardByName(cardName.Text);
 
-			AddImageToStackPanel(card.DefaultImage);
+			AddCardToStackPanel(card);
 		}
 
 		
@@ -117,7 +115,7 @@ namespace MtgCard.App
 
 			var card = await cardAdapter.GetCardByName(args.SelectedItem.ToString());
 
-			AddImageToStackPanel(card.DefaultImage);
+			AddCardToStackPanel(card);
 		}
 	}
 }

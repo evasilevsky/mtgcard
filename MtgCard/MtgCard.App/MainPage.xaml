@@ -22,9 +22,6 @@
             <StackPanel x:Name="sp3" Orientation="Horizontal">
 
             </StackPanel>
-            <local:CardControl>
-                
-            </local:CardControl>
         </StackPanel>
         <Grid x:Name="field">
             <Grid.RowDefinitions>
