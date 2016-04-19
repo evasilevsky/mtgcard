@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Input;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -27,6 +28,7 @@ namespace MtgCard.App
 		public CardControl()
 		{
 			this.InitializeComponent();
+			CanDrag = true;
 			this.DataContext = this;
 		}
 

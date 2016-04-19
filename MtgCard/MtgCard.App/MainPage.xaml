@@ -31,10 +31,10 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <StackPanel Background="Green" Grid.Column="0">
+            <StackPanel x:Name="MainBoard" AllowDrop="True" Background="Green" Grid.Column="0" DragOver="MainBoard_DragOver" Drop="MainBoard_Drop">
 
             </StackPanel>
-            <StackPanel Background="Blue" Grid.Column="1">
+            <StackPanel x:Name="SideBoard" AllowDrop="True" Background="Blue" Grid.Column="1" DragOver="SideBoard_DragOver" Drop="SideBoard_Drop">
 
             </StackPanel>
         </Grid>

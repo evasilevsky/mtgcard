@@ -6,8 +6,10 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -43,6 +45,7 @@ namespace MtgCard.App
 		public void AddCardToStackPanel(Card card)
 		{
 			var cardControl = new CardControl(card);
+			cardControl.CanDrag = true;
 			cardControl.card = card;
 
 			switch (row)
@@ -97,6 +100,25 @@ namespace MtgCard.App
 			var card = await cardAdapter.GetCardByName(args.SelectedItem.ToString());
 
 			AddCardToStackPanel(card);
+		}
+
+		private void MainBoard_DragOver(object sender, DragEventArgs e)
+		{
+			e.AcceptedOperation = DataPackageOperation.Copy;
+		}
+
+		private void SideBoard_DragOver(object sender, DragEventArgs e)
+		{
+			e.AcceptedOperation = DataPackageOperation.Copy;
+		}
+
+		private async void MainBoard_Drop(object sender, DragEventArgs e)
+		{
+		}
+
+		private void SideBoard_Drop(object sender, DragEventArgs e)
+		{
+
 		}
 	}
 }
