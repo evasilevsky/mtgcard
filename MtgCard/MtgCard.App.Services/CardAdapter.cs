@@ -67,6 +67,7 @@ namespace MtgCard.Services
 		{
 			HttpClientHandler systemHandler = new HttpClientHandler();
 			CustomHandler1 handler = new CustomHandler1();
+			handler.InnerHandler = systemHandler;
 			HttpClient myClient = new HttpClient(handler);
 			var cts = new CancellationTokenSource();
 			cts.CancelAfter(TimeSpan.FromSeconds(30));
@@ -76,8 +77,9 @@ namespace MtgCard.Services
 
 			try
 			{
-				HttpResponseMessage response = await myClient.GetAsync(resourceUri + "/typeahead", cts.Token);
-				card = jsonTranslator.Deserialize<List<Card>>(response.Content.ToString());
+				HttpResponseMessage response = await myClient.GetAsync($"{resourceUri}/typeahead?q={searchTerm}", cts.Token);
+				var content = await response.Content.ReadAsStringAsync();
+				card = jsonTranslator.Deserialize<List<Card>>(content);
 			}
 			catch (TaskCanceledException ex)
 			{

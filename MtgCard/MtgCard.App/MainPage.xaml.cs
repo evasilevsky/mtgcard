@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -88,6 +89,29 @@ namespace MtgCard.App
 		private async void button_Click(object sender, RoutedEventArgs e)
 		{
 			var card = await cardAdapter.GetCardByName(cardName.Text);
+
+			AddImageToStackPanel(card.DefaultImage);
+		}
+
+		
+
+		private async void cardName_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+		{
+			var cards = await cardAdapter.GetTypeAhead(cardName.Text);
+			((AutoSuggestBox)sender).ItemsSource = cards.Select(x => x.id);
+		}
+
+		private async void cardName_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+		{
+			//var card = await cardAdapter.GetCardByName(args.QueryText);
+
+			//AddImageToStackPanel(card.DefaultImage);
+		}
+
+		private async void cardName_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+		{
+
+			var card = await cardAdapter.GetCardByName(args.SelectedItem.ToString());
 
 			AddImageToStackPanel(card.DefaultImage);
 		}
