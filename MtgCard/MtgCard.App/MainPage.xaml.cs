@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MtgCard.Services;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -23,13 +25,14 @@ namespace MtgCard.App
     /// </summary>
     public sealed partial class MainPage : Page
     {
-		//private CardAdapter cardAdapter;
+		private CardAdapter cardAdapter;
 		private int row = 0;
 		private int col = 0;
+
         public MainPage()
 		{
 			this.InitializeComponent();
-			//cardAdapter = new CardAdapter();
+			cardAdapter = new CardAdapter();
         }
 
 		public void AddImage(string imageUrl)
@@ -52,10 +55,11 @@ namespace MtgCard.App
 			field.Children.Add(img);
 		}
 
-		private void button_Click(object sender, RoutedEventArgs e)
+		private async void button_Click(object sender, RoutedEventArgs e)
 		{
-			var card = cardName.Text;
-			AddImage("https://image.deckbrew.com/mtg/multiverseid/382943.jpg");
+			var card = await cardAdapter.GetCardByName(cardName.Text);
+
+			AddImage(card.DefaultImage);
 		}
 	}
 }

@@ -18,12 +18,12 @@ namespace MtgCard.Services
 			};
 		}
 
-		public Pack Build(List<string> cardNames)
-		{
-			var cardAdapter = new CardAdapter();
-			var cards = cardNames.Select(x => cardAdapter.GetCardByName(x)).ToList();
-			return new Pack {Cards = cards};
-		}
+		//public Pack Build(List<string> cardNames)
+		//{
+		//	var cardAdapter = new CardAdapter();
+		//	var cards = cardNames.Select(x => cardAdapter.GetCardByName(x)).ToList();
+		//	return new Pack {Cards = cards};
+		//}
 
 		//public Pack BuildRandomPackFromSet(string setName, bool packShouldContainFoil = false, bool packShouldContainMythic = false)
 		//{

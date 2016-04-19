@@ -13,15 +13,16 @@ namespace MtgCard.Services
 		private const string apiLocation = "https://api.deckbrew.com/mtg/cards";
 		private JsonTranslator jsonTranslator = new JsonTranslator();
 
-		public Card GetCardByName(string cardName)
+		public async Task<Card> GetCardByName(string cardName)
 		{
-			return BuildRequestAndSend(cardName).Result;
+			return await BuildRequestAndSend(cardName);
 		}
 
 		private async Task<Card> BuildRequestAndSend(string cardName)
 		{
 			HttpClientHandler systemHandler = new HttpClientHandler();
 			CustomHandler1 handler = new CustomHandler1();
+			handler.InnerHandler = systemHandler;
 			HttpClient myClient = new HttpClient(handler);
 			var cts = new CancellationTokenSource();
 			cts.CancelAfter(TimeSpan.FromSeconds(30));
@@ -31,8 +32,9 @@ namespace MtgCard.Services
 
 			try
 			{
-				HttpResponseMessage response = await myClient.GetAsync(resourceUri, cts.Token);
-				card = jsonTranslator.Deserialize<Card>(response.Content.ToString());
+				HttpResponseMessage response = await myClient.GetAsync(resourceUri + "/" + cardName, cts.Token);
+				var content = await response.Content.ReadAsStringAsync();
+				card = jsonTranslator.Deserialize<Card>(content);
 			}
 			catch (TaskCanceledException ex)
 			{
