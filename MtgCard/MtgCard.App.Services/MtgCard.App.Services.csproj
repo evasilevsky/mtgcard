@@ -107,6 +107,32 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardAdapter.cs" />
+    <Compile Include="CustomHandler1.cs" />
+    <Compile Include="Domain\Card.cs" />
+    <Compile Include="Domain\CircularList.cs" />
+    <Compile Include="Domain\Deck.cs" />
+    <Compile Include="Domain\Draft.cs" />
+    <Compile Include="Domain\Edition.cs" />
+    <Compile Include="Domain\Pack.cs" />
+    <Compile Include="Domain\Player.cs" />
+    <Compile Include="Domain\Price.cs" />
+    <Compile Include="Domain\Product.cs" />
+    <Compile Include="Domain\Rarity.cs" />
+    <Compile Include="Domain\Exceptions\RestrictedCardException.cs" />
+    <Compile Include="Domain\Exceptions\TooManyCopiesException.cs" />
+    <Compile Include="Domain\Formats\Commander.cs" />
+    <Compile Include="Domain\Formats\ConstructedFormat.cs" />
+    <Compile Include="Domain\Formats\Format.cs" />
+    <Compile Include="Domain\Formats\IBannable.cs" />
+    <Compile Include="Domain\Formats\ICommanderBannable.cs" />
+    <Compile Include="Domain\Formats\IRestrictable.cs" />
+    <Compile Include="Domain\Formats\Legacy.cs" />
+    <Compile Include="Domain\Formats\LimitedFormat.cs" />
+    <Compile Include="Domain\Formats\Modern.cs" />
+    <Compile Include="Domain\Formats\Vintage.cs" />
+    <Compile Include="JsonTranslator.cs" />
+    <Compile Include="PackFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\MtgCard.App.Services.rd.xml" />
   </ItemGroup>
