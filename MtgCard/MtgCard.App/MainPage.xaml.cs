@@ -79,17 +79,17 @@ namespace MtgCard.App
 
 		private async void cardName_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
 		{
-			//var card = await cardAdapter.GetCardByName(args.QueryText);
+			var card = await cardAdapter.GetCardByName(args.QueryText);
 
-			//AddImageToStackPanel(card.DefaultImage);
+			AddCardToStackPanel(card);
 		}
 
 		private async void cardName_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
 		{
 
-			var card = await cardAdapter.GetCardByName(args.SelectedItem.ToString());
+			//var card = await cardAdapter.GetCardByName(args.SelectedItem.ToString());
 
-			AddCardToStackPanel(card);
+			//AddCardToStackPanel(card);
 		}
 
 		private void MainBoard_DragOver(object sender, DragEventArgs e)

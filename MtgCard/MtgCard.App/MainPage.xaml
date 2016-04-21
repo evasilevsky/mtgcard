@@ -17,7 +17,11 @@
         		QuerySubmitted="cardName_QuerySubmitted"
         		SuggestionChosen="cardName_SuggestionChosen"/>
 
-                <ComboBox x:Name="format" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" Width="120"/>
+                <ComboBox x:Name="format" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" Width="120">
+                    <ComboBoxItem>Modern</ComboBoxItem>
+                    <ComboBoxItem>Legacy</ComboBoxItem>
+                    <ComboBoxItem>Vintage</ComboBoxItem>
+                </ComboBox>
             </StackPanel>
             <StackPanel Background="Bisque" VerticalAlignment="Top">
                 <StackPanel x:Name="sp1" Orientation="Horizontal">
