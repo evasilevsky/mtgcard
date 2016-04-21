@@ -46,6 +46,11 @@ namespace MtgCard.App
 				removeCopy.IsEnabled = true;
 				image.Opacity = 1;
 			}
+			if (card.copies >= 4)
+			{
+				addCopy.IsEnabled = false;
+				
+			}
 			card.copies++;
 			copies.Text = card.copies.ToString();
 		}
@@ -53,6 +58,10 @@ namespace MtgCard.App
 		private void removeCopy_Click(object sender, RoutedEventArgs e)
 		{
 			card.copies--;
+			if (!addCopy.IsEnabled)
+			{
+				addCopy.IsEnabled = true;
+			}
 			if (card.copies == 0)
 			{
 				image.Opacity = .2;
