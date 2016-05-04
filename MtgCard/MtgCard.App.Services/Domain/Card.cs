@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace MtgCard.Domain
 {
@@ -27,7 +28,15 @@ namespace MtgCard.Domain
 		{
 			get
 			{
-				return editions?[0].image_Url;
+				var defaultImage = editions.FirstOrDefault(x => x.image_Url != null);
+				if (defaultImage != null && defaultImage.image_Url != null)
+				{
+					return editions?[0].image_Url;
+				}
+				else
+				{
+					return "/Assets/imgUnavailable.PNG";
+				}
 			}
 		}
 	}

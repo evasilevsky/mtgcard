@@ -35,7 +35,6 @@ namespace MtgCard.App
 		public void AddCardToStackPanel(Card card)
 		{
 			var cardControl = new CardControl(card);
-			card.copies = 1;
 			cardControl.CanDrag = true;
 			cardControl.card = card;
 
