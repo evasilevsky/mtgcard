@@ -34,8 +34,8 @@ namespace MtgCard.Services
 			var allUncommons = _cardAdapter.GetCardsBySetAndRarity(setName, Rarity.Uncommon);
 			var allRares = _cardAdapter.GetCardsBySetAndRarity(setName, Rarity.Rare);
 			var allMythics = _cardAdapter.GetCardsBySetAndRarity(setName, Rarity.Mythic);
-			var numberOfCommons = 10;
-			var numberOfUncommons = 3;
+			var numberOfCommons = ApplicationStateRepository.CommonsPerPack;
+			var numberOfUncommons = ApplicationStateRepository.UncommonsPerPack;
 
 			if (packShouldContainFoil)
 			{

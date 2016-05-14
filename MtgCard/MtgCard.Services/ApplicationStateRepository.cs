@@ -6,5 +6,19 @@ namespace MtgCard.Services
 	public class ApplicationStateRepository : IApplicationStateRepository
 	{
 		public Draft Draft { get; set; }
-	}
+        public static int CommonsPerPack
+        {
+            get
+            {
+                return 10;
+            }
+        }
+        public static int UncommonsPerPack
+        {
+            get
+            {
+                return 3;
+            }
+        }
+    }
 }
