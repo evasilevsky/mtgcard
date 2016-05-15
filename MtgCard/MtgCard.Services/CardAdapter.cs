@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using RestSharp;
 using MtgCard.Domain;
+using System.Linq;
 
 namespace MtgCard.Services
 {
@@ -10,10 +11,16 @@ namespace MtgCard.Services
 		private const string apiLocation = "https://api.deckbrew.com/mtg/cards";
 		private RestClient restClient = new RestClient(apiLocation);
 		private JsonTranslator jsonTranslator = new JsonTranslator();
+        private List<Card> CardCache = new List<Card>();
 
 		public Card GetCardByName(string cardName)
 		{
-			return BuildRequestAndSend(cardName);
+            var card = CardCache.FirstOrDefault(x => x.name == cardName);
+            if (card == null)
+            {
+                card = BuildRequestAndSend(cardName);
+            }
+			return card;
 		}
 
 		private Card BuildRequestAndSend(string cardName)
@@ -21,7 +28,8 @@ namespace MtgCard.Services
 			RestRequest restRequest = new RestRequest(cardName);
 			var restResponse = restClient.Execute(restRequest);
 			var card = jsonTranslator.Deserialize<Card>(restResponse.Content);
-			return card;
+            CardCache.Add(card);
+            return card;
 		}
 
 		public List<Card> GetFilteredCards(IEnumerable<KeyValuePair<string, string>> queryStringParameters)

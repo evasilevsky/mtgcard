@@ -20,5 +20,11 @@ namespace MtgCard.Services
                 return 3;
             }
         }
+
+        public static int PacksPerDraft { get
+            {
+                return 3;
+            }
+        }
     }
 }

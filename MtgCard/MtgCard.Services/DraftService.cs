@@ -10,9 +10,11 @@ namespace MtgCard.Services
     public class DraftService
     {
         public List<Player> Players { get; set; }
+        public PackFactory PackFactory { get; set; }
 
         public DraftService(List<string> playerNames)
         {
+            PackFactory = new PackFactory();
             InitializePlayers(playerNames);
         }
 
@@ -44,6 +46,10 @@ namespace MtgCard.Services
                 }
 
                 Players[i].tableList = new TableList<Player>(left, right);
+                for (int j = 0; j < ApplicationStateRepository.PacksPerDraft; j++)
+                {
+                    Players[i].EnqueuePack(PackFactory.BuildRandomPackFromSet("SOI"));
+                }
             }
         }
     }
