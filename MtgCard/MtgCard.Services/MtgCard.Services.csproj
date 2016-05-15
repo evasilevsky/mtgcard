@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ApplicationStateRepository.cs" />
     <Compile Include="CardAdapter.cs" />
+    <Compile Include="DraftService.cs" />
     <Compile Include="Interfaces\IApplicationStateRepository.cs" />
     <Compile Include="JsonTranslator.cs" />
     <Compile Include="PackFactory.cs" />
