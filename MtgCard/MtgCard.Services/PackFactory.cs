@@ -5,10 +5,15 @@ using MtgCard.Domain;
 
 namespace MtgCard.Services
 {
-	public class PackFactory
-	{
-		private CardAdapter _cardAdapter = new CardAdapter();
+	public class PackFactory : IPackFactory
+    {
+		private ICardAdapter _cardAdapter = new CardAdapter();
 		private Random _random = new Random();
+
+        public PackFactory(ICardAdapter cardAdapter)
+        {
+            _cardAdapter = cardAdapter;
+        }
 		
 		public Pack Build(List<Card> cards)
 		{

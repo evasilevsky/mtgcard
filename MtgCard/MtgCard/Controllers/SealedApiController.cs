@@ -10,7 +10,7 @@ namespace MtgCard.Controllers
 		public Pool GetPool()
 		{
 			var packs = new List<Pack>();
-			var packFactory = new PackFactory();
+			var packFactory = new PackFactory(new CardAdapter());
 			var pool = new Pool();
 			for (int i = 0; i < 6; i++)
 			{

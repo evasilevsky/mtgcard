@@ -18,7 +18,8 @@ namespace MtgCard.Services.Tests
             {
                 "tom", "bob", "sue", "joe", "edith", "jack", "jacob", "don"
             };
-            var draftService = new DraftService(list);
+            var draftService = new DraftService(new PackFactory(new CardAdapter()));
+            draftService.InitializePlayers(list);
             Player bob = draftService.Players.First(x => x.Name == "bob");
         }
     }

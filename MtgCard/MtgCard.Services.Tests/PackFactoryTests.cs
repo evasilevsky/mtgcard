@@ -14,7 +14,7 @@ namespace MtgCard.Services.Tests
         [TestCase("KTK")]
         public void BuildRandomPackFromSet(string setName)
         {
-            var packFactory = new PackFactory();
+            var packFactory = new PackFactory(new CardAdapter());
 
             var result = packFactory.BuildRandomPackFromSet(setName);
 

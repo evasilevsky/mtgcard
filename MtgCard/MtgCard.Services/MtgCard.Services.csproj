@@ -49,7 +49,9 @@
     <Compile Include="ApplicationStateRepository.cs" />
     <Compile Include="CardAdapter.cs" />
     <Compile Include="DraftService.cs" />
+    <Compile Include="ICardAdapter.cs" />
     <Compile Include="Interfaces\IApplicationStateRepository.cs" />
+    <Compile Include="IPackFactory.cs" />
     <Compile Include="JsonTranslator.cs" />
     <Compile Include="PackFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

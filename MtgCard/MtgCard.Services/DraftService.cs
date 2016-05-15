@@ -10,12 +10,11 @@ namespace MtgCard.Services
     public class DraftService
     {
         public List<Player> Players { get; set; }
-        public PackFactory PackFactory { get; set; }
+        public IPackFactory PackFactory { get; set; }
 
-        public DraftService(List<string> playerNames)
+        public DraftService(IPackFactory packFactory)
         {
-            PackFactory = new PackFactory();
-            InitializePlayers(playerNames);
+            PackFactory = packFactory;
         }
 
         public void InitializePlayers(List<string> playerNames)

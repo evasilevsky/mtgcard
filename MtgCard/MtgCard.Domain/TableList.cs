@@ -14,7 +14,7 @@ namespace MtgCard.Domain
         public TableList(T left, T right)
         {
             Left = left;
-            Right = Right;
+            Right = right;
         }
     }
 }

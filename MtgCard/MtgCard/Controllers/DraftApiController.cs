@@ -8,7 +8,7 @@ namespace MtgCard.Controllers
 {
 	public class DraftApiController : ApiController
 	{
-		private PackFactory _packFactory = new PackFactory();
+		private IPackFactory _packFactory = new PackFactory(new CardAdapter());
 		private Draft _currentDraft;
 
 		public DraftApiController()

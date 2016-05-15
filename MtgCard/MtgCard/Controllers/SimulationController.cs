@@ -10,13 +10,13 @@ namespace MtgCard.Controllers
     {
 		[HttpGet]
 	    public IEnumerable<Player> Draft(int numberOfPlayers)
-	    {
-		    var draft = new Draft();
+        {
+            var packFactory = new PackFactory(new CardAdapter());
+            var draft = new Draft();
 		    var numberOfPacks = 3;
 			draft.Players = new CircularList<Player>();
 			for (int i = 0; i < numberOfPlayers; i++)
 			{
-				var packFactory = new PackFactory();
 				var player = new Player();
 				for (int j = 0; j < numberOfPacks; j++)
 				{

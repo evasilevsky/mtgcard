@@ -6,8 +6,8 @@ using System.Linq;
 
 namespace MtgCard.Services
 {
-	public class CardAdapter
-	{
+	public class CardAdapter : ICardAdapter
+    {
 		private const string apiLocation = "https://api.deckbrew.com/mtg/cards";
 		private RestClient restClient = new RestClient(apiLocation);
 		private JsonTranslator jsonTranslator = new JsonTranslator();
@@ -20,6 +20,7 @@ namespace MtgCard.Services
             {
                 card = BuildRequestAndSend(cardName);
             }
+            CardCache.Add(card);
 			return card;
 		}
 
